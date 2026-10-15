@@ -1,0 +1,506 @@
+/* =========================
+   ECO TRACK AI
+=========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#07121B;
+    color:#fff;
+    overflow-x:hidden;
+
+}
+
+/* Background */
+
+body::before{
+
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top right,#00ff8850,transparent 35%),
+
+    radial-gradient(circle at bottom left,#00ff8840,transparent 30%),
+
+    linear-gradient(135deg,#061019,#07121B,#02070B);
+
+    z-index:-2;
+
+}
+
+/* =====================
+NAVBAR
+===================== */
+
+header{
+
+    position:fixed;
+
+    top:20px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    z-index:999;
+
+}
+
+.navbar{
+
+    width:90%;
+
+    max-width:1300px;
+
+    padding:18px 35px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#00e676;
+
+}
+
+.logo i{
+
+    font-size:30px;
+
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:35px;
+
+    list-style:none;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#00e676;
+
+}
+
+.dashboard-btn{
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    background:#00e676;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.dashboard-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 25px #00e676;
+
+}
+
+/* ======================
+HERO
+====================== */
+
+.hero{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.hero-content{
+
+    width:55%;
+
+}
+
+.hero-content h1{
+
+    font-size:72px;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+}
+
+.hero-content p{
+
+    color:#B8C4CE;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.btn-primary{
+
+    padding:18px 35px;
+
+    background:#00e676;
+
+    color:white;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 25px #00e676;
+
+}
+
+.btn-secondary{
+
+    padding:18px 35px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(10px);
+
+}
+
+.hero-image{
+
+    width:45%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-image img{
+
+    width:500px;
+
+    animation:float 5s ease-in-out infinite;
+
+    filter:drop-shadow(0 0 45px rgba(0,255,150,.5));
+
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-25px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/* ======================
+Responsive
+====================== */
+
+@media(max-width:992px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding-top:150px;
+
+}
+
+.hero-content{
+
+width:100%;
+
+}
+
+.hero-image{
+
+width:100%;
+
+margin-top:60px;
+
+}
+
+.hero-image img{
+
+width:330px;
+
+}
+
+.hero-content h1{
+
+font-size:50px;
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
+}
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    width:90%;
+    max-width:1200px;
+    margin:120px auto;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-heading span{
+    color:#00e676;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.section-heading h2{
+    font-size:48px;
+    margin:15px 0;
+}
+
+.section-heading p{
+    color:#b8c4ce;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.feature-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:20px;
+    padding:35px;
+    transition:.4s;
+}
+
+.feature-card:hover{
+    transform:translateY(-12px);
+    border-color:#00e676;
+    box-shadow:0 15px 40px rgba(0,230,118,.25);
+}
+
+.feature-card i{
+    font-size:42px;
+    color:#00e676;
+    margin-bottom:20px;
+}
+
+.feature-card h3{
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.feature-card p{
+    color:#b8c4ce;
+    line-height:1.7;
+}
+/* ==========================
+   STATISTICS
+========================== */
+
+.stats{
+    width:90%;
+    max-width:1300px;
+    margin:120px auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:#00e676;
+    letter-spacing:2px;
+    font-weight:600;
+}
+
+.section-title h2{
+    font-size:48px;
+    margin:15px 0;
+}
+
+.section-title p{
+    color:#b8c4ce;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.stat-card{
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    transition:.4s;
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#00e676;
+
+    box-shadow:0 20px 50px rgba(0,230,118,.25);
+
+}
+
+.stat-card i{
+
+    font-size:45px;
+
+    color:#00e676;
+
+    margin-bottom:20px;
+
+}
+
+.stat-card h2{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.stat-card p{
+
+    color:#b8c4ce;
+
+}

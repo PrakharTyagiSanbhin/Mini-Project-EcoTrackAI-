@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoTrack AI Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    >
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <i class="fa-solid fa-earth-americas"></i>
+                EcoTrack AI
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assessment.html">
+                        Assessment
+                    </a>
+                </li>
+
+                <li>
+                    <a href="dashboard.html" class="active">
+                        Dashboard
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="container">
+
+        <!-- Welcome -->
+
+        <section class="welcome-section">
+
+            <h1 id="welcome">
+                Welcome 👋
+            </h1>
+
+            <p class="subtitle">
+                Monitor your carbon footprint, analyse environmental
+                impact and receive AI-powered sustainability recommendations.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+        ================================================== -->
+
+        <section class="dashboard-grid">
+
+            <!-- Carbon -->
+
+            <div class="card summary-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+
+                <h3>
+                    Carbon Footprint
+                </h3>
+
+                <h1 id="carbon">
+                    0 kg/day
+                </h1>
+
+            </div>
+
+
+            <!-- Eco Score -->
+
+            <div class="card summary-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+
+                <h3>
+                    Eco Score
+                </h3>
+
+                <h1 id="score">
+                    0/100
+                </h1>
+
+            </div>
+
+
+            <!-- Badge -->
+
+            <div class="card summary-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+
+                <h3>
+                    Eco Badge
+                </h3>
+
+                <h2 id="badge">
+                    -
+                </h2>
+
+            </div>
+
+
+            <!-- Status -->
+
+            <div class="card summary-card">
+
+                <div class="icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <h3>
+                    Status
+                </h3>
+
+                <h2>
+                    Climate Aware
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CHARTS
+        ================================================== -->
+
+        <section class="analytics">
+
+            <!-- Pie Chart -->
+
+            <div class="card chart-card">
+
+                <h2>
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Carbon Breakdown
+                </h2>
+
+                <div class="chart-container">
+
+                    <canvas id="pieChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+            <!-- Line Chart -->
+
+            <div class="card chart-card">
+
+                <h2>
+                    <i class="fa-solid fa-chart-line"></i>
+                    Carbon Trend
+                </h2>
+
+                <div class="chart-container">
+
+                    <canvas id="lineChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             EMISSION BREAKDOWN
+        ================================================== -->
+
+        <section class="dashboard-grid">
+
+            <!-- Transport -->
+
+            <div class="card">
+
+                <h3>
+                    🚗 Transport
+                </h3>
+
+                <h2 id="transportEmission">
+                    0 kg/day
+                </h2>
+
+            </div>
+
+
+            <!-- AC -->
+
+            <div class="card">
+
+                <h3>
+                    ❄️ AC Usage
+                </h3>
+
+                <h2 id="acEmission">
+                    0 kg/day
+                </h2>
+
+            </div>
+
+
+            <!-- Food -->
+
+            <div class="card">
+
+                <h3>
+                    🍽️ Food
+                </h3>
+
+                <h2 id="foodEmission">
+                    0 kg/day
+                </h2>
+
+            </div>
+
+
+            <!-- Plastic -->
+
+            <div class="card">
+
+                <h3>
+                    🧴 Plastic
+                </h3>
+
+                <h2 id="plasticEmission">
+                    0 kg/day
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             AI CLIMATE COACH
+        ================================================== -->
+
+        <section class="card">
+
+            <h2>
+
+                <i class="fa-solid fa-robot"></i>
+
+                AI Climate Coach
+
+            </h2>
+
+            <div id="coach">
+
+                Loading AI recommendations...
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ASK FUTURE ME
+        ================================================== -->
+
+        <section class="card">
+
+            <h2>
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Ask Future Me
+
+            </h2>
+
+            <p>
+
+                Ask how your future carbon footprint may change
+                based on different lifestyle choices.
+
+            </p>
+
+
+            <input
+                type="text"
+                id="futureQuestion"
+                placeholder="Example: What if I cycle to college every day?"
+            >
+
+
+            <button
+                type="button"
+                id="askBtn"
+            >
+                Ask AI
+            </button>
+
+
+            <div id="futureAnswer"></div>
+
+        </section>
+
+
+        <!-- =================================================
+             PDF REPORT
+        ================================================== -->
+
+        <section class="card report-card">
+
+            <h2>
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+                Sustainability Report
+
+            </h2>
+
+            <p>
+
+                Download your personalised carbon footprint
+                report with AI recommendations.
+
+            </p>
+
+
+            <!-- IMPORTANT PDF BUTTON -->
+
+            <button
+                type="button"
+                id="downloadPdf"
+                class="pdf-button"
+            >
+
+                <i class="fa-solid fa-file-pdf"></i>
+
+                Download PDF Report
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 EcoTrack AI |
+            Built by <strong>Team EcoTrack AI</strong>
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT LIBRARIES
+    ====================================================== -->
+
+    <!-- Chart.js FIRST -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- jsPDF SECOND -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+    </script>
+
+
+    <!-- dashboard.js MUST BE LAST -->
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
